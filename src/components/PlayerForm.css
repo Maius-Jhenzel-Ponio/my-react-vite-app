@@ -1,0 +1,166 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a1f;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: backgroundAnimation 9s infinite; /* Change the background every 9 seconds */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Keyframes for Background Image Rotation */
+@keyframes backgroundAnimation {
+    0% {
+        background-image: url('../assets/1.jpeg'); /* Replace with your first image */
+    }
+    33% {
+        background-image: url('../assets/2.jpeg'); /* Replace with your second image */
+    }
+    66% {
+        background-image: url('../assets/3.jpeg'); /* Replace with your third image */
+    }
+    100% {
+        background-image: url('../assets/1.jpeg'); /* Loop back to the first image */
+    }
+}
+
+/* Container for the form */
+.information-container {
+    background-color: rgba(26, 26, 46, 0.8); /* Dark background with transparency */
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Title and Subheading */
+h1 {
+    font-size: 28px;
+    color: #f4f4f9;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #d0d0d0;
+    margin-bottom: 30px;
+}
+
+/* Information Field (Input & Select) */
+.information-field {
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Labels */
+label {
+    font-size: 16px;
+    color: #e0e0e0;
+    display: block;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Input and Select Styling */
+input,
+select {
+    background-color: #0e0e24;
+    border: 2px solid #1e1e35;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    color: #f4f4f9;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect for Inputs */
+input:focus,
+select:focus {
+    border-color: #4e5d77;
+    outline: none;
+}
+
+/* Submit Button */
+button.Submit-btn {
+    background-color: #3b4b63;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+button.Submit-btn:hover {
+    background-color: #2e3b4b;
+}
+
+button.Submit-btn:active {
+    background-color: #253141;
+}
+
+/* Hover and Focus Effects for Inputs */
+input:focus,
+select:focus {
+    box-shadow: 0 0 10px rgba(57, 130, 184, 0.7);
+}
+
+/* Portal Effect for the Form (without animation) */
+.information-container:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transform: rotate(45deg);
+}
+
+/* Center the Form Elements */
+.information-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjusting the Select options for better alignment */
+select {
+    text-align: center;
+}
+
+/* Adjust the submit button */
+button.Submit-btn {
+    text-align: center;
+}
+
+/* Center input and select elements */
+input,
+select {
+    text-align: center;
+}
