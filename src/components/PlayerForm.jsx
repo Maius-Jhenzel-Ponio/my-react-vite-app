@@ -13,14 +13,46 @@ const handleChange = (e) => {
     });
 }
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.player || !formData.position || !formData.champion){
         alert ("Please select to the choices, before submitting!");
         return;
     }
-}
+
+    try{
+        const response = await fetch ("https://lolplayerform.azurewebsites.net/", {
+            method:"POST",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        if(response.ok){
+            const result = await response.json();
+            alert("Form is submitted successfully");
+            console.log("API Response: ", result)
+            console.log("Form submission was successful!");
+
+            setFormData({
+                name:"",
+                age:"",
+                player:"select your answer",
+                position:"select your answer",
+                champion:"select your answer"
+            });
+        } else {
+           alert("Failed to submit form. Please try again");
+           console.error("API Error", response.statusText); 
+        }
+    } catch(error){
+        alert("An error occured while submitting the form");
+        console.error("error", error);
+    }
+
+};
 
 return (
     <div className="information-container">
