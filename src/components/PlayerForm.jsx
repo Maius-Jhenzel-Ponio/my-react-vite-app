@@ -20,12 +20,7 @@ const handleSubmit = (e) => {
         alert ("Please select to the choices, before submitting!");
         return;
     }
-    console.log("Form Data Submitted: ", formData);
-
-        setFormData({
-            name:"", age:"", player:"", position:"", champion:"", 
-        });
-};
+}
 
 return (
     <div className="information-container">
