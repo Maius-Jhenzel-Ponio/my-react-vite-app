@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
     }
 
     try{
-        const response = await fetch ("https://lolplayerform.azurewebsites.net/", {
+        const response = await fetch ("https://lolplayerform.azurewebsites.net/submit", {
             method:"POST",
             headers:{
                 "Content-Type": "application/json",
